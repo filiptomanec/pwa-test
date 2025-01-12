@@ -36,7 +36,6 @@ function App() {
                         label="Multiline"
                         multiline
                         rows={4}
-                        variant="filled"
                     />
                     <Button
                         variant="contained"
