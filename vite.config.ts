@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [
         react(),
         VitePWA({
-            registerType: 'autoUpdate',
+            registerType: "autoUpdate",
             manifest: {
                 name: 'PWA Test App',
                 short_name: 'PWATest',

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {ChangeEvent, useState} from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 function App() {
     const [image, setImage] = useState<string | null>(null); // Stav pro uloženou fotku
 
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0]; // Získání vybraného souboru
         if (file) {
             const reader = new FileReader();
