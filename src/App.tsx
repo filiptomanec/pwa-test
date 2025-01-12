@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import CameraComponent from "./components/CameraComponent.tsx";
+import React from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = React.useState(0)
 
   return (
     <>
@@ -23,7 +22,8 @@ function App() {
                 count is {count}
             </button>
 
-            <CameraComponent />
+            {/*<CameraComponent />*/}
+            <input type="file" accept="image/*" capture="camera"/>
 
             <p>
                 Edit <code>src/App.tsx</code> and save to test HMR
