@@ -38,7 +38,6 @@ function App() {
                     <input
                         type="file"
                         accept="image/*"
-                        capture="environment"
                         hidden
                         onChange={handleFileChange} // Volání při výběru souboru
                     />
