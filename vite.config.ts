@@ -14,7 +14,7 @@ export default defineConfig({
                 description: 'My PWA Test App',
                 theme_color: '#ffffff',
                 background_color: '#ffffff',
-                display: 'fullscreen',
+                display: 'standalone',
                 icons: [
                     {
                         src: "/pwa-192x192.png",
