@@ -2,7 +2,7 @@ import {ChangeEvent, useState} from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { Button } from "@mui/material";
+import {Button, Stack, TextField} from "@mui/material";
 
 function App() {
     const [image, setImage] = useState<string | null>(null); // Stav pro uloženou fotku
@@ -22,35 +22,44 @@ function App() {
         <>
             <div>
                 <a href="https://vite.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
+                    <img src={viteLogo} className="logo" alt="Vite logo"/>
                 </a>
                 <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
+                    <img src={reactLogo} className="logo react" alt="React logo"/>
                 </a>
             </div>
             <h1>Vite + React</h1>
             <div className="card">
-                <Button
-                    variant="contained"
-                    component="label"
-                >
-                    Take a photo
-                    <input
-                        type="file"
-                        accept="image/*"
-                        hidden
-                        onChange={handleFileChange} // Volání při výběru souboru
+                <Stack spacing={2}>
+                    <TextField
+                        id="filled-multiline-static"
+                        label="Multiline"
+                        multiline
+                        rows={4}
+                        variant="filled"
                     />
-                </Button>
+                    <Button
+                        variant="contained"
+                        component="label"
+                    >
+                        Take a photo
+                        <input
+                            type="file"
+                            accept="image/*"
+                            hidden
+                            onChange={handleFileChange} // Volání při výběru souboru
+                        />
+                    </Button>
+                </Stack>
 
                 {/* Zobrazení náhledu obrázku */}
                 {image && (
-                    <div style={{ marginTop: "20px" }}>
+                    <div style={{marginTop: "20px"}}>
                         <h3>Preview:</h3>
                         <img
                             src={image}
                             alt="Captured"
-                            style={{ maxWidth: "100%", height: "auto", borderRadius: "8px" }}
+                            style={{maxWidth: "100%", height: "auto", borderRadius: "8px"}}
                         />
                     </div>
                 )}
