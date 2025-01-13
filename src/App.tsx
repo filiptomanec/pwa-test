@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { Button, Stack, TextField } from "@mui/material";
 import { Field, Form, Formik } from "formik";
+import { useIsOnline } from "./useIsOnline.ts";
 
 interface IFormData {
   name: string;
@@ -11,6 +12,7 @@ interface IFormData {
 }
 
 function App() {
+  useIsOnline();
   const [image, setImage] = useState<string | null>(null); // Stav pro uloženou fotku
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
