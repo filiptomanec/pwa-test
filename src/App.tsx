@@ -37,8 +37,8 @@ function App() {
     localStorage.setItem("formData", JSON.stringify(values));
   };
 
-  const clearFormData = () => {
-    localStorage.removeItem("formData");
+  const clearFormData = async () => {
+    await localStorage.removeItem("formData");
   };
 
   return (
@@ -55,8 +55,8 @@ function App() {
       <div className="card">
         <Formik
           initialValues={loadFormData()}
-          onSubmit={(_, { resetForm }) => {
-            clearFormData();
+          onSubmit={async (_, { resetForm }) => {
+            await clearFormData();
             resetForm();
             alert("Formulář uložen!");
           }}
